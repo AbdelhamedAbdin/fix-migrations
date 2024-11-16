@@ -7,6 +7,7 @@ class Category(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_cat")
     cat_name = models.CharField(max_length=255, verbose_name="Category Name")
     updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.cat_name
