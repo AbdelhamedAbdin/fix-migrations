@@ -8,3 +8,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.cat_name
+
+
+class Product(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="prod_user")
+    prod_name = models.CharField(max_length=255, verbose_name="Product Name")
+
+    def __str__(self):
+        return self.prod_name
